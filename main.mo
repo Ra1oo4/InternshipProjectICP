@@ -17,7 +17,7 @@ actor {
 
   let phoneBook = Map.HashMap<Name, Entry>(0, Text.equal, Text.hash);
 
-  let MessageHistory = Map.HashMap<Phone, Messafe>(0, Text.equal, Text.hash);
+  let MessageHistory = Map.HashMap<Phone, Message>(0, Text.equal, Text.hash);
 
   public func insert (name: Name, entry: Entry): async (){
     phoneBook.put(name, entry); 
@@ -31,8 +31,8 @@ actor {
     return phoneBook.get(name);
   };
   
-  public funch getMessage(senderPhone: Phone ): async ?Message {
+  public query func getMessage(senderPhone: Phone ): async ?Message {
     return MessageHistory.get(senderPhone);
   };
   
-};
+}
