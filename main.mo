@@ -2,12 +2,17 @@ import Map "mo:base/HashMap";
 import Text "mo:base/Text";
 actor {
 
-  type name= Text;
+  type Name= Text;
   type Phone = Text;
 
   type Entry = {
   desc: Text;
-  phone: phone;
+  phone: Phone;
+  };
+
+  type Message = {
+  reciver: Text;
+  mess: Text;
   };
 
   let phoneBook = Map.HashMap<Name, Entry>(0, Text);
